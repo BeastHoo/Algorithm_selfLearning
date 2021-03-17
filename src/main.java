@@ -1,3 +1,6 @@
+import BinarySearchTree.BinarySearchTree;
+import BinarySearchTree.Node;
+
 import java.util.Random;
 
 public class main{
@@ -37,17 +40,29 @@ public class main{
 //        {
 //            A[i]=random.nextInt(50);
 //        }
-        int []A=new int[]{2,8,7,1,3,5,6,4};
-        long start=System.currentTimeMillis();
-//        QuickSort qs=new QuickSort();
-//        qs.Quick_Sort(A,0,A.length-1);
-        Randomized_QuickSort rqs=new Randomized_QuickSort();
-        rqs.RandomizedQuickSort(A,0,A.length-1);
-        long end=System.currentTimeMillis();
-        System.out.println("Sort timing:"+(end-start));
-        for(int i:A)
+//        int []A=new int[]{2,8,7,1,3,5,6,4};
+//        long start=System.currentTimeMillis();
+////        QuickSort qs=new QuickSort();
+////        qs.Quick_Sort(A,0,A.length-1);
+//        Randomized_QuickSort rqs=new Randomized_QuickSort();
+//        rqs.RandomizedQuickSort(A,0,A.length-1);
+//        long end=System.currentTimeMillis();
+//        System.out.println("Sort timing:"+(end-start));
+//        for(int i:A)
+//        {
+//            System.out.println(i);
+//        }
+
+        int [] test=new int[]{9,2,7,8,11,355,479,684,192,456};
+        Node root=new Node();
+        BinarySearchTree bst=new BinarySearchTree();
+        for (int i:test)
         {
-            System.out.println(i);
+            Node node=new Node(i);
+            bst.Node_Insert(root,node);
         }
+        bst.InOrderTraverse(root);
+        bst.Delete(root,bst.IterativeTreeSearch(root,192));
+        bst.InOrderTraverse(root);
     }
 }
